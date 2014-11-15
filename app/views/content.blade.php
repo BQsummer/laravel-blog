@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-	<head>
-		<meta charset=UTF-8"UTF-8">
-		<title></title>
-		<meta name='robots' content='noindex,follow' />
-		<link rel='stylesheet' href="3.9.2.css"/>
-		<link rel='stylesheet' href="assets/index/css/index-style.css"/>
-	</head>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+<title>BQsummer</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel='stylesheet' href="3.9.2.css"/>
+<link rel='stylesheet' href="assets/index/css/index-style.css"/>
+</head>
 	<body class="single single-post postid-1730 single-format-standard has-featured-image">
 		<!-- canner -->
 		<div class="header section">

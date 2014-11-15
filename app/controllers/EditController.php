@@ -48,8 +48,8 @@ class  EditController extends BaseController {
 			$hz = 'jpg';
 			$time = time();
 			$name = $time.'.'.$hz;
-			$destinationPath = public_path();
-			Input::file('upload')->move('upload',$name);
+			$destinationPath = public_path().'/storage/uploads/article_image';
+			Input::file('upload')->move($destinationPath,$name);
 			return "{{ URL::asset('upload/".$name."' )}}";
 		}
 	}

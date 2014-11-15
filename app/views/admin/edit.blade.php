@@ -7,11 +7,11 @@
 <meta name="description" content="">
 <meta name="keywords" content="">
 <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/myblog/public/assets/admin/css/local.css" />
-<link rel="stylesheet" type="text/css" href="/myblog/public/assets/admin/css/main.css" />
+<link rel="stylesheet" type="text/css" href="assets/admin/css/local.css" />
+<link rel="stylesheet" type="text/css" href="assets/admin/css/main.css" />
 <script src="http://lib.sinaapp.com/js/jquery/2.0.3/jquery-2.0.3.min.js" ></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> 
-<script src="/myblog/public/assets/ckeditor/ckeditor.js"></script>   
+<script src="/laravel-blog/public/assets/ckeditor/ckeditor.js"></script>   
 </head>
 <body style="background-color:#FFFBE0;">
     
