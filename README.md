@@ -1,3 +1,5 @@
 laravel-blog
 ============
-ss
+laravel
+bootstrap
+ckeditor
