@@ -45,9 +45,9 @@ class  EditController extends BaseController {
 
 		if (Input::hasFile('upload')){
 			$file = Input::file('upload');
-			$hz = 'jpg';
+			$ext = 'jpg';
 			$time = time();
-			$name = $time.'.'.$hz;
+			$name = $time.'.'.$ext;
 			$destinationPath = public_path().'/storage/uploads/article_image';
 			Input::file('upload')->move($destinationPath,$name);
 			return "{{ URL::asset('upload/".$name."' )}}";

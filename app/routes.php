@@ -18,6 +18,7 @@ Route::post('article','LoginController@check');
 Route::post('post_success',"EditController@edit");
 Route::post('post_img','EditController@image');
 Route::post('link_article','ArticleController@index');
+Route::post('settings','SettingsController@index');
 
 //index
 Route::get('/', function()
@@ -51,15 +52,19 @@ Route::get('/edit/{article_num?}', array('before'=>'auth','as'=>'edit',function(
 	return View::make('admin/edit',array('article'=>NULL,'msg_count'=>$msg_count));
 }));
 
-// Route::get('/user/detail/{id}',function($user_id){
-// 	return route('user_home',array('username'=>"xiaoming"));
-// });
-
-Route::get('/settings', function()
+Route::get('/settings',array('before'=>'auth','as'=>'settings',function()
 {
+	$settings = DB::table('settings')->select('*')->where('id','1')->get();
 	$msg_count = DB::table('reply')->where('is_read','=','0')->count();
-	return View::make('admin/settings',array('msg_count'=>$msg_count));
-});
+	return View::make('admin/settings',array('msg_count'=>$msg_count,'settings'=>$settings));
+}));
+
+Route::get('/reply',array('before'=>'auth','as'=>'reply',function()
+{
+	$replies = DB::table('reply')->select('*')->where('id','1')->paginate(6);
+	$msg_count = DB::table('reply')->where('is_read','=','0')->count();
+	return View::make('admin/reply',array('msg_count'=>$msg_count,'replies'=>$replies));
+}));
 
 //login
 Route::get('/login', function()
