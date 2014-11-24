@@ -61,9 +61,12 @@ Route::get('/settings',array('before'=>'auth','as'=>'settings',function()
 
 Route::get('/reply',array('before'=>'auth','as'=>'reply',function()
 {
-	$replies = DB::table('reply')->select('*')->where('id','1')->paginate(6);
+	$replies = DB::table('reply')->select('*')->paginate(6);
 	$msg_count = DB::table('reply')->where('is_read','=','0')->count();
-	return View::make('admin/reply',array('msg_count'=>$msg_count,'replies'=>$replies));
+	$approve = DB::table('reply')->where('is_approve','=','0')->count();
+	$delete = DB::table('reply')->where('is_deleted','=','1')->count();
+	$num = DB::table('reply')->count();
+	return View::make('admin/reply',array('msg_count'=>$msg_count,'replies'=>$replies,'approve'=>$approve,'delete'=>$delete,'num'=>$num));
 }));
 
 //login
