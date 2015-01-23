@@ -36,5 +36,5 @@ CKEDITOR.editorConfig = function( config ) {
 	// Simplify the dialog windows.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
 
-	config.filebrowserImageUploadUrl= "http://127.0.0.1/laravel-blog/public/post_img";
+	config.filebrowserImageUploadUrl= "http://blog.com/post_img";
 };

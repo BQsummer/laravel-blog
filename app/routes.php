@@ -14,7 +14,8 @@ Route::get('/test/{num?}', function()
 });
 
 //controller
-Route::post('article','LoginController@check');
+Route::post('post','PostController@post');
+Route::post('admin/article','LoginController@check');
 Route::post('post_success',"EditController@edit");
 Route::post('post_img','EditController@image');
 Route::post('link_article','ArticleController@index');
@@ -23,17 +24,22 @@ Route::post('settings','SettingsController@index');
 //index
 Route::get('/', function()
 {
-	return View::make('index');
+	$articles = DB::table('article')->select('*')->paginate(6);
+	return View::make('index',array('articles'=>$articles));
 });
 
-Route::get('/content', function()
+Route::get('/article/{article_num}', function($article_num)
 {
-	return View::make('content');
+	$pre_article = DB::table('article')->select('id','num','title','author')->where('num','<',$article_num)->orderBy('num', 'desc')->first();
+	$replies = DB::table('reply')->where('article_num','=',$article_num)->where('is_sub_reply','=',0)->get();
+	$sub_replies = DB::table('reply')->where('article_num','=',$article_num)->where('is_sub_reply','=',1)->get();
+	$article = DB::table('article')->where('num','=',$article_num)->get();
+	return View::make('content',array('pre_article'=>$pre_article,'article'=>$article,'replies'=>$replies,'sub_replies'=>$sub_replies));
 });
 
 
 //admin
-Route::get('/article',array('before'=>'auth','as'=>'article',function()
+Route::get('admin',array('before'=>'auth','as'=>'article',function()
 {
 	$msg_count = DB::table('reply')->where('is_read','=','0')->count();
 	$exist = DB::table('article')->where('deleted','=','0')->count();
@@ -42,7 +48,7 @@ Route::get('/article',array('before'=>'auth','as'=>'article',function()
 	return View::make('/admin/article',array('exist'=>$exist,'deleted'=>$deleted,'articles'=>$articles,'msg_count'=>$msg_count));
 }));
 
-Route::get('/edit/{article_num?}', array('before'=>'auth','as'=>'edit',function($article_num = NULL)
+Route::get('admin/edit/{article_num?}', array('before'=>'auth','as'=>'edit',function($article_num = NULL)
 {
 	$msg_count = DB::table('reply')->where('is_read','=','0')->count();
 	if($article_num){
@@ -52,18 +58,18 @@ Route::get('/edit/{article_num?}', array('before'=>'auth','as'=>'edit',function(
 	return View::make('admin/edit',array('article'=>NULL,'msg_count'=>$msg_count));
 }));
 
-Route::get('/settings',array('before'=>'auth','as'=>'settings',function()
+Route::get('admin/settings',array('before'=>'auth','as'=>'settings',function()
 {
 	$settings = DB::table('settings')->select('*')->where('id','1')->get();
 	$msg_count = DB::table('reply')->where('is_read','=','0')->count();
 	return View::make('admin/settings',array('msg_count'=>$msg_count,'settings'=>$settings));
 }));
 
-Route::get('/reply',array('before'=>'auth','as'=>'reply',function()
+Route::get('admin/reply',array('before'=>'auth','as'=>'reply',function()
 {
 	$replies = DB::table('reply')->select('*')->paginate(6);
 	$msg_count = DB::table('reply')->where('is_read','=','0')->count();
-	$approve = DB::table('reply')->where('is_approve','=','0')->count();
+	$approve = DB::table('reply')->where('is_approved','=','0')->count();
 	$delete = DB::table('reply')->where('is_deleted','=','1')->count();
 	$num = DB::table('reply')->count();
 	return View::make('admin/reply',array('msg_count'=>$msg_count,'replies'=>$replies,'approve'=>$approve,'delete'=>$delete,'num'=>$num));

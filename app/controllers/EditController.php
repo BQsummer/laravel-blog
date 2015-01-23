@@ -24,19 +24,15 @@ class  EditController extends BaseController {
 			return  Redirect::back();
 		}
 		else{
-			$article = Edit::where('num','=',$article_num);
+			$article = Edit::where('num','=',$article_num)->first();
 			$article->title = $title;
-			$article->auther = $auther;
+			$article->author = $author;
 			$article->content = $content;
 			$article->tags = $tag;
 			$article->lebal = $lebal;
 			$article->save();
 			return  Redirect::back();
 		}
-		
-
-		
-
 		
 		}
 	

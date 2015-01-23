@@ -216,7 +216,7 @@ input#s {
 	left: 0;
 	width: 100px;
 	height: 100px;
-	background: #FFF url("/myblog/public/assets/index/img/home.png") no-repeat center;
+	background: #FFF url("/assets/index/img/home.png") no-repeat center;
 	background-size: 32px auto;
 	border-radius: 9999px;
 	border: 5px solid #FFF;
@@ -465,6 +465,8 @@ body > .navigation {
 .post:first-child { margin-top: 0; }
 
 .content-inner {
+	/*overflow: hidden;*/
+	/*max-height: 605px;*/
 	width: 87.5%;
 	float: right; 
 	position: relative;
@@ -561,15 +563,15 @@ a.sticky-bubble:hover { z-index: 11; }
 /*  Post formats  ----------------------------------------- */
 
 
-.format-aside a.format-bubble { background-image: url("/myblog/public/assets/index/img/aside.png"); }
-.format-audio a.format-bubble { background-image: url("/myblog/public/assets/index/img/audio.png"); background-size: auto 22px; background-position: 11px 12px; }
-.format-chat a.format-bubble { background-image: url("/myblog/public/assets/index/img/chat.png"); background-position: center 14px; }
-.format-gallery a.format-bubble,
-.format-image a.format-bubble { background-image: url("/myblog/public/assets/index/img/image.png"); background-position: center 12px; }
-.format-link a.format-bubble { background-image: url("/myblog/public/assets/index/img/link.png"); }
-.format-quote a.format-bubble { background-image: url("/myblog/public/assets/index/img/quote.png"); background-position: center 13px; }
-.format-status a.format-bubble { background-image: url("/myblog/public/assets/index/img/status.png"); background-position: 12px 14px; }
-.format-video a.format-bubble { background-image: url("/myblog/public/assets/index/img/video.png"); background-position: 11px 14px; }
+.format-aside a.format-bubble { background-image: url("/assets/index/img/aside.png"); }
+.format-music a.format-bubble { background-image: url("/assets/index/img/music.png"); background-size: auto 22px; background-position: 11px 12px; }
+.format-chat a.format-bubble { background-image: url("/assets/index/img/chat.png"); background-position: center 14px; }
+.format-log a.format-bubble { background-image: url("/assets/index/img/log.png"); background-position: center 12px; }
+.format-photo a.format-bubble { background-image: url("/assets/index/img/photo.png"); background-position: center 12px; }
+.format-links a.format-bubble { background-image: url("/assets/index/img/link.png"); }
+.format-quote a.format-bubble { background-image: url("/assets/index/img/quote.png"); background-position: center 13px; }
+.format-status a.format-bubble { background-image: url("/assets/index/img/status.png"); background-position: 12px 14px; }
+.format-video a.format-bubble { background-image: url("/assets/index/img/video.png"); background-position: 11px 14px; }
 
 
 /* Format audio --------------------------------------- */
@@ -1015,12 +1017,12 @@ html[xmlns] .slides { display: block; }
 .post-content cite {
 	font-family: 'Raleway', 'Helvetica Neue', sans-serif;
 	font-weight: 600;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 	line-height: 140%;
-	color: #666;
+	color: #2B323A;
 }
 
-.post-content cite:before { content: "— "; }
+/*.post-content cite:before { content: "— "; }*/
 
 .post-content blockquote cite {
 	display: block;
@@ -1491,9 +1493,9 @@ a#cancel-comment-reply-link:hover { text-decoration: none !important; }
 	border: 1px solid #EEE;
 }
 
-.content #respond form .comment-form-author input { background-image: url("user_g.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/1x/user_g.png*/; }
-.content #respond form .comment-form-email input { background-image: url("email_g.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/1x/email_g.png*/; }
-.content #respond form .comment-form-url input { background-image: url("house_g.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/1x/house_g.png*/; background-size: 22px auto; }
+.content #respond  .comment-form-author input { background-image: url("/assets/index/img/user_g.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/1x/user_g.png*/; }
+.content #respond  .comment-form-email input { background-image: url("/assets/index/img/email_g.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/1x/email_g.png*/; }
+.content #respond  .comment-form-url input { background-image: url("/assets/index/img/house_g.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/1x/house_g.png*/; background-size: 22px auto; }
 
 .content form textarea { line-height: 160%; height: 250px; }
 
@@ -1507,9 +1509,9 @@ a#cancel-comment-reply-link:hover { text-decoration: none !important; }
 	color: #FFF;
 }
 
-.content #respond form .comment-form-author input:focus { background-image: url("user.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/1x/user.png*/; }
-.content #respond form .comment-form-email input:focus { background-image: url("email.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/1x/email.png*/; }
-.content #respond form .comment-form-url input:focus { background-image: url("house.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/1x/house.png*/; }
+.content #respond  .comment-form-author input:focus { background-image: url("/assets/index/img/user.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/1x/user.png*/; }
+.content #respond  .comment-form-email input:focus { background-image: url("/assets/index/img/email.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/1x/email.png*/; }
+.content #respond  .comment-form-url input:focus { background-image: url("/assets/index/img/house.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/1x/house.png*/; }
 
 .content #respond form input {
 	width: 75%;
@@ -1954,13 +1956,13 @@ a#cancel-comment-reply-link:hover { text-decoration: none !important; }
 	
 	.mejs-mute button, .mejs-unmute button { background-image: url("audio-3.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/2x/audio.png*/; }
 		
-	.content #respond form .comment-form-author input { background-image: url("user_g-1.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/2x/user_g.png*/; }
-	.content #respond form .comment-form-email input { background-image: url("email_g-1.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/2x/email_g.png*/; }
-	.content #respond form .comment-form-url input { background-image: url("house_g-1.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/2x/house_g.png*/; }
+	.content #respond  .comment-form-author input { background-image: url("user_g-1.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/2x/user_g.png*/; }
+	.content #respond  .comment-form-email input { background-image: url("email_g-1.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/2x/email_g.png*/; }
+	.content #respond  .comment-form-url input { background-image: url("house_g-1.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/2x/house_g.png*/; }
 	
-	.content #respond form .comment-form-author input:focus { background-image: url("user-1.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/2x/user.png*/; }
-	.content #respond form .comment-form-email input:focus { background-image: url("email-1.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/2x/email.png*/; }
-	.content #respond form .comment-form-url input:focus { background-image: url("house-1.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/2x/house.png*/; }
+	.content #respond  .comment-form-author input:focus { background-image: url("user-1.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/2x/user.png*/; }
+	.content #respond  .comment-form-email input:focus { background-image: url("email-1.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/2x/email.png*/; }
+	.content #respond  .comment-form-url input:focus { background-image: url("house-1.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/2x/house.png*/; }
 
 	.search-no-results .format-bubble { background-image: url("error-1.png")/*tpa=http://127.0.0.1/wordpress/wp-content/themes/lingonberry-zh/images/2x/error.png*/; }
 	
