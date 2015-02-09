@@ -26,7 +26,7 @@
                         <div class="row article-menu">
                             <div class="col-xs-1 mg-l-50"></div>
                             <div class="col-xs-3" style="color:#000;">标题</div>
-                            <div class="col-xs-1" style="color:#000;margin-left:-30px;">分类</div>
+                            <div class="col-xs-1" style="color:#000;margin-left:-10px;">分类</div>
                             <div class="col-xs-2" style="color:#000;">标签</div>
                             <div class="col-xs-1" style="color:#000;">回复</div>
                             <div class="col-xs-2" style="color:#000;margin-left:-30px;">创建日期</div>
@@ -43,8 +43,8 @@
                     ?>
                         <div class="row article-art">
                             <div class="col-xs-1 mg-l-50"><input type="checkbox" value="{{$article->num}}" name="article_num[]"></div>
-                            <div class="col-xs-3 "><a href="{{URL::to('edit',array($article->num))}}">{{$article->title}}</a></div>
-                            <div class="col-xs-1 " style="margin-left:-30px;">{{$article->lebal}}</div>
+                            <div class="col-xs-3 "><a href="{{URL::to('admin/edit',array($article->num))}}">{{$article->title}}</a></div>
+                            <div class="col-xs-1 " style="margin-left:-10px;">{{$article->lebal}}</div>
                             <div class="col-xs-2 ">{{$article->tags}}</div>
                             <div class="col-xs-1 ">{{$article->reply_num}}</div>
                             <div class="col-xs-2 " style="margin-left:-30px;">{{$created_at}}</div>

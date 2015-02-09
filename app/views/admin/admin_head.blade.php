@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="/assets/admin/css/main.css" />
 <script src="http://lib.sinaapp.com/js/jquery/2.0.3/jquery-2.0.3.min.js" ></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> 
-<script src="/assets/ckeditor/ckeditor.js"></script>    
+<script src="/assets/ckeditor/ckeditor.js"></script> 
+<script src="assets/admin/js/main.js"></script>   
 </head>
 <body style="background-color:#FFFBE0;">

@@ -25,7 +25,7 @@
                             <div class="col-xs-1 mg-l-50"></div>
                             <div class="col-xs-2" style="color:#000;">作者/邮箱</div>
                             <div class="col-xs-6" style="color:#000;">内容</div>
-                            <div class="col-xs-2" style="color:#000;">文章标题/恢复给</div>
+                            <div class="col-xs-2" style="color:#000;">文章标题/回复给</div>
                             <div class="col-xs-1" style="color:#000;">状态</div>
                         </div>
                     
